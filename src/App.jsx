@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import RecipeCategories from "./RecipeCategories";
+import RecipeCategorie from "./RecipeCategorie";
 
 import { FaSearch, FaHeart, FaBars, FaTimes } from "react-icons/fa";
 
@@ -299,6 +300,8 @@ function App() {
 
       </div>
    <RecipeCategories />
+
+    <RecipeCategorie />
 
     </div>
      
