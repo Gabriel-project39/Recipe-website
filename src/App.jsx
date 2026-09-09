@@ -1,122 +1,307 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import { FaSearch, FaHeart, FaBars, FaTimes } from "react-icons/fa";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const recipes = [
+    {
+      image: "https://pinchofyum.com/tachyon/Chicken-Caesar-Smash-Tacos.jpg?resize=840%2C1200&zoom=0.5",
+      category: "DINNER",
+    },
+    {
+      image: "https://pinchofyum.com/tachyon/Gochujang-Noodles-3.jpg?resize=840%2C1200&zoom=0.5",
+      category: "QUICK AND EASY",
+    },
+    {
+      image: "https://pinchofyum.com/tachyon/Crunch-Roll-Bowls-2.jpg?resize=840%2C1200&zoom=0.5",
+      category: "HEALTHY",
+    },
+    {
+      image: "https://pinchofyum.com/tachyon/Walnut-Meatballs-2.jpg?resize=840%2C1200&zoom=0.5",
+      category: "TOMATO",
+    },
+  ];
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="min-h-screen bg-[#202020] text-white">
+
+      {/* ================= NAVBAR ================= */}
+      <header className="bg-[#111111] border-b border-gray-700">
+
+        <div className="max-w-[1400px] mx-auto px-6 md:px-8">
+
+          <div className="h-24 flex items-center justify-between">
+
+            {/* LOGO */}
+            <div className="text-4xl md:text-5xl font-serif">
+              <span className="text-[#e0a0c7]">pinch</span>
+              <span className="text-gray-400">of</span>
+              <span className="text-[#e0a0c7]">yum</span>
+            </div>
+
+
+            {/* ================= DESKTOP MENU ================= */}
+            <nav className="hidden md:flex items-center gap-10">
+
+              <a
+                href="#home"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                HOME
+              </a>
+
+              <a
+                href="#about"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                ABOUT
+              </a>
+
+              <a
+                href="#recipes"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                RECIPES
+              </a>
+
+              <a
+                href="#start"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                START HERE
+              </a>
+
+              <button className="text-[#e0a0c7] text-xl">
+                <FaSearch />
+              </button>
+
+            </nav>
+
+
+            {/* ================= HAMBURGER ================= */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden text-[#e0a0c7] text-3xl p-2"
+              aria-label="Open menu"
+            >
+              {menuOpen ? <FaTimes /> : <FaBars />}
+            </button>
+
+          </div>
+
+
+          {/* ================= MOBILE MENU ================= */}
+          {menuOpen && (
+            <div className="md:hidden border-t border-gray-700">
+
+              <nav className="flex flex-col py-5">
+
+                <a
+                  href="#home"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7] transition"
+                >
+                  HOME
+                </a>
+
+                <a
+                  href="#about"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7] transition"
+                >
+                  ABOUT
+                </a>
+
+                <a
+                  href="#recipes"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7] transition"
+                >
+                  RECIPES
+                </a>
+
+                <a
+                  href="#start"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7] transition"
+                >
+                  START HERE
+                </a>
+
+                <button
+                  className="
+                    flex
+                    items-center
+                    gap-3
+                    px-4
+                    py-4
+                    font-bold
+                    text-left
+                    hover:bg-[#222222]
+                    hover:text-[#e0a0c7]
+                    transition
+                  "
+                >
+                  <FaSearch />
+                  SEARCH
+                </button>
+
+              </nav>
+
+            </div>
+          )}
+
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+
+      </header>
+
+
+      {/* ================= HERO ================= */}
+      <section className="bg-[#111111] py-7 border-b border-gray-800">
+
+        <div className="text-center">
+
+          <p className="uppercase tracking-[0.35em] text-sm md:text-base font-semibold">
+
+            Simple recipes made for{" "}
+
+            <span className="normal-case tracking-normal text-2xl md:text-3xl italic text-[#d9a5c8] font-serif">
+              real, actual, everyday life.
+            </span>
+
           </p>
+
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
+
+      </section>
+
+      {/* ================= RECIPES ================= */}
+      <main
+        id="recipes"
+        className="max-w-[1400px] mx-auto px-6 md:px-8 py-10"
+      >
+
+        <div className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
+          gap-5
+        ">
+
+          {recipes.map((recipe, index) => (
+
+            <div
+              key={index}
+              className="group relative overflow-hidden"
+            >
+
+              <img
+                src={recipe.image}
+                alt={recipe.category}
+                className="
+                  w-full
+                  h-[500px]
+                  object-cover
+                  transition
+                  duration-500
+                  group-hover:scale-105
+                "
+              />
+
+              {/* DARK GRADIENT */}
+              <div className="
+                absolute
+                inset-x-0
+                bottom-0
+                h-40
+                bg-gradient-to-t
+                from-black/70
+                to-transparent
+              " />
+
+              {/* CATEGORY */}
+              <div className="absolute bottom-0 left-0 right-0 flex justify-center">
+
+                <span className="
+                  bg-[#f2b53d]
+                  text-white
+                  px-8
+                  py-4
+                  text-sm
+                  md:text-base
+                  font-bold
+                  tracking-[0.2em]
+                  text-center
+                ">
+                  {recipe.category}
+                </span>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </main>
+
+
+      {/* ================= FLOATING BUTTONS ================= */}
+      <div className="
+        fixed
+        right-5
+        bottom-6
+        flex
+        flex-col
+        items-center
+        gap-3
+      ">
+
+        <span className="text-[#e0a0c7] font-bold text-sm">
+          181.7k
+        </span>
+
+        <button className="
+          w-14
+          h-14
+          rounded-full
+          bg-[#111111]
+          border
+          border-gray-600
+          flex
+          items-center
+          justify-center
+          text-[#e0a0c7]
+          text-xl
+        ">
+          <FaHeart />
         </button>
-      </section>
 
-      <div className="ticks"></div>
+        <button className="
+          w-14
+          h-14
+          rounded-full
+          bg-[#9b4c86]
+          flex
+          items-center
+          justify-center
+          text-white
+          text-xl
+        ">
+          <FaSearch />
+        </button>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </div>
+  
+    </div>
+     
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+
+  );
 }
 
-export default App
+export default App;
