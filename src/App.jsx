@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import RecipeCategories from "./RecipeCategories";
+
 import { FaSearch, FaHeart, FaBars, FaTimes } from "react-icons/fa";
 
 function App() {
@@ -296,7 +298,8 @@ function App() {
         </button>
 
       </div>
-  
+   <RecipeCategories />
+
     </div>
      
 
