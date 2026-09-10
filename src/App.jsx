@@ -641,7 +641,15 @@ function App() {
 
       {/* HOME */}
 
-     
+      <Route 
+  path="/" 
+  element={
+    <>
+      <Home />
+      <RecipeCategories />
+    </>
+  } 
+/>
 
 
       {/* RECIPES */}
