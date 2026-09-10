@@ -3,7 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import RecipeCategorie from "./RecipeCategorie";
 import RecipeDetails from "./RecipeDetails";
-
+import RecipeCategories from "./RecipeCategories";
 
 
 
@@ -641,10 +641,7 @@ function App() {
 
       {/* HOME */}
 
-      <Route
-        path="/"
-        element={<Home />}
-      />
+     
 
 
       {/* RECIPES */}
