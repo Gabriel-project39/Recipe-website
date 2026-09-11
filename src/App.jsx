@@ -5,6 +5,7 @@ import RecipeCategorie from "./RecipeCategorie";
 import RecipeDetails from "./RecipeDetails";
 import PopularRecipes from "./PopularRecipes";
 import RecipeCategories from "./RecipeCategories";
+import Footer from "./Footer";
 
 
 
@@ -649,6 +650,7 @@ function App() {
       <Home />
       <RecipeCategories />
       <PopularRecipes />
+      <Footer />
       
     </>
   } 
