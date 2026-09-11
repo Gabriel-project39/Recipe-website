@@ -3,6 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import RecipeCategorie from "./RecipeCategorie";
 import RecipeDetails from "./RecipeDetails";
+import PopularRecipes from "./PopularRecipes";
 import RecipeCategories from "./RecipeCategories";
 
 
@@ -647,6 +648,8 @@ function App() {
     <>
       <Home />
       <RecipeCategories />
+      <PopularRecipes />
+      
     </>
   } 
 />
