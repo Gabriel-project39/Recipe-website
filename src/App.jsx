@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
+
+import About from "./About";
 import RecipeCategorie from "./RecipeCategorie";
 import RecipeDetails from "./RecipeDetails";
 import PopularRecipes from "./PopularRecipes";
@@ -122,7 +124,7 @@ function Home() {
               </Link>
 
               <a
-                href="#about"
+                href="/about"
                 className="font-bold hover:text-[#e0a0c7] transition"
               >
                 ABOUT
@@ -655,6 +657,8 @@ function App() {
     </>
   } 
 />
+
+<Route path="/about" element={<About />} />
 
 
       {/* RECIPES */}

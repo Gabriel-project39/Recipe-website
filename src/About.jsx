@@ -1,9 +1,143 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 
 function About() {
+    const [menuOpen, setMenuOpen] = useState(false);
   return (
     <section className="bg-[#202020] text-white min-h-screen">
       
+<header className="bg-[#111111] border-b border-gray-700">
+
+        <div className="max-w-[1400px] mx-auto px-6 md:px-8">
+
+          <div className="h-24 flex items-center justify-between">
+
+            {/* LOGO */}
+
+            <Link
+              to="/"
+              className="text-4xl md:text-5xl font-serif"
+            >
+              <span className="text-[#e0a0c7]">pinch</span>
+              <span className="text-gray-400">of</span>
+              <span className="text-[#e0a0c7]">yum</span>
+            </Link>
+
+
+            {/* DESKTOP MENU */}
+
+            <nav className="hidden md:flex items-center gap-10">
+
+              <Link
+                to="/"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                HOME
+              </Link>
+
+              <Link
+                href="/about"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                ABOUT
+              </Link>
+
+              <Link
+                to="/categories"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                RECIPES
+              </Link>
+
+              <a
+                href="#start"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                START HERE
+              </a>
+
+              <Link
+                to="/categories"
+                className="text-[#e0a0c7] text-xl"
+                aria-label="Search recipes"
+              >
+                <FaSearch />
+              </Link>
+
+            </nav>
+
+
+            {/* MOBILE BUTTON */}
+
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden text-[#e0a0c7] text-3xl p-2"
+              aria-label="Open menu"
+            >
+              {menuOpen ? <FaTimes /> : <FaBars />}
+            </button>
+
+          </div>
+
+
+          {/* MOBILE MENU */}
+
+          {menuOpen && (
+            <div className="md:hidden border-t border-gray-700">
+
+              <nav className="flex flex-col py-5">
+
+                <Link
+                  to="/"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  HOME
+                </Link>
+
+                <Link
+                  href="#about"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  ABOUT
+                </Link>
+
+                <Link
+                  to="/categories"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  RECIPES
+                </Link>
+
+                <a
+                  href="#start"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  START HERE
+                </a>
+
+                <Link
+                  to="/categories"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center gap-3 px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  <FaSearch />
+                  SEARCH
+                </Link>
+
+              </nav>
+
+            </div>
+          )}
+
+        </div>
+
+      </header>
+
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2">
 
         {/* LEFT IMAGE */}
