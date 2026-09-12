@@ -143,7 +143,7 @@ function About() {
         {/* LEFT IMAGE */}
         <div className="w-full h-[500px] md:h-[700px]">
           <img
-            src="/images/about.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYMODZ2mq96tNXr2uBHz0EE5gk6TjjDmSMA_SvFVGbUw&s=10"
             alt="About me"
             className="w-full h-full object-cover"
           />
@@ -166,7 +166,7 @@ function About() {
           <h2 className="text-xl md:text-2xl font-bold mb-8">
             HI, MY NAME IS{" "}
             <span className="font-serif italic text-gray-400">
-              Gabriel!
+              Gabriela!
             </span>
           </h2>
 
