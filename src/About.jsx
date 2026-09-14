@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import Footer from "./Footer";
 
 function About() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -427,58 +428,7 @@ function About() {
 
 </section>
 
-
-{/* NEWSLETTER SECTION */}
-<section className="bg-[#111111] py-20">
-
-  <div className="max-w-[900px] mx-auto px-8 text-center">
-
-    <p className="text-[#e0a0c7] font-bold tracking-widest text-sm mb-4">
-      STAY IN THE LOOP
-    </p>
-
-    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-5">
-      Get Delicious Recipes in Your Inbox
-    </h2>
-
-    <p className="text-gray-400 text-base md:text-lg leading-7 max-w-2xl mx-auto mb-10">
-      Sign up for our newsletter and get new recipes, cooking ideas, and
-      helpful kitchen tips delivered straight to your inbox.
-    </p>
-
-
-    {/* FORM */}
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        alert("Thank you for subscribing!");
-      }}
-      className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto"
-    >
-
-      <input
-        type="email"
-        placeholder="Enter your email address"
-        required
-        className="flex-1 px-5 py-4 bg-[#202020] border border-gray-700 text-white outline-none focus:border-[#e0a0c7]"
-      />
-
-      <button
-        type="submit"
-        className="px-8 py-4 bg-[#e0a0c7] text-[#111111] font-bold hover:bg-[#d58db8] transition"
-      >
-        SUBSCRIBE
-      </button>
-
-    </form>
-
-    <p className="text-gray-600 text-sm mt-5">
-      No spam. Just delicious recipes and updates.
-    </p>
-
-  </div>
-
-</section>
+   <Footer />
 
     </section>
     
