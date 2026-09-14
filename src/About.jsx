@@ -201,7 +201,287 @@ function About() {
 
         </div>
       </div>
+
+      {/* WHY USE OUR RECIPES */}
+      <div className="max-w-[1200px] mx-auto px-8 md:px-14 py-16 md:py-20">
+
+        <h2 className="text-3xl md:text-4xl font-bold tracking-wide mb-10">
+          WHY USE OUR RECIPES
+        </h2>
+
+        <ul className="space-y-8 text-gray-300 text-base md:text-lg leading-8">
+
+          <li className="flex gap-4">
+            <span className="text-white text-xl">•</span>
+
+            <p>
+              <strong className="text-white">
+                Trusted recipes.
+              </strong>{" "}
+              Our recipes are carefully selected and tested to help you
+              prepare delicious meals with confidence, whether you're an
+              experienced cook or just getting started.
+            </p>
+          </li>
+
+          <li className="flex gap-4">
+            <span className="text-white text-xl">•</span>
+
+            <p>
+              <strong className="text-white">
+                Quick and easy.
+              </strong>{" "}
+              We focus on simple and practical recipes that are perfect for
+              busy days. You don't need to spend hours in the kitchen to
+              prepare a great meal.
+            </p>
+          </li>
+
+          <li className="flex gap-4">
+            <span className="text-white text-xl">•</span>
+
+            <p>
+              <strong className="text-white">
+                Easy-to-find ingredients.
+              </strong>{" "}
+              Our recipes use ingredients that are simple to find, making
+              cooking easier, affordable, and convenient.
+            </p>
+          </li>
+
+          <li className="flex gap-4">
+            <span className="text-white text-xl">•</span>
+
+            <p>
+              <strong className="text-white">
+                Tips, tricks, tutorials, and more.
+              </strong>{" "}
+              Each recipe can include helpful cooking tips and simple
+              instructions to help you get better results in the kitchen.
+            </p>
+          </li>
+
+        </ul>
+
+      </div>
+
+{/* SECOND IMAGE + TEXT SECTION */}
+<section className="bg-[#181818]">
+  <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2">
+
+    {/* IMAGE */}
+    <div className="w-full h-[450px] md:h-[600px]">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRifLR7uSzAXhDatqBLRxymD9GjtA5Ejkmk-GRJB-_ugw&s=10"
+        alt="Cooking and recipes"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    {/* TEXT */}
+    <div className="flex items-center px-8 md:px-14 py-12 md:py-16">
+
+      <div>
+        <p className="text-[#e0a0c7] font-bold tracking-widest text-sm mb-4">
+          COOK • CREATE • ENJOY
+        </p>
+
+        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8">
+          Good Food Brings People Together
+        </h2>
+
+        <div className="space-y-5 text-gray-300 text-base md:text-lg leading-8">
+
+          <p>
+            Food is more than just something we eat. It brings people
+            together, creates memories, and gives us a reason to slow down
+            and enjoy the moment.
+          </p>
+
+          <p>
+            That's why I believe recipes should be simple, enjoyable, and
+            easy to follow. Whether you're cooking for yourself, your
+            family, or friends, every meal is an opportunity to create
+            something special.
+          </p>
+
+          <p>
+            My goal is to make cooking feel less complicated and more
+            enjoyable, one recipe at a time.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* WHAT YOU'LL FIND HERE */}
+<section className="bg-[#202020] py-20">
+
+  <div className="max-w-[1200px] mx-auto px-8 md:px-14">
+
+    {/* HEADING */}
+    <div className="text-center mb-14">
+
+      <p className="text-[#e0a0c7] font-bold tracking-widest text-sm mb-4">
+        EXPLORE THE WEBSITE
+      </p>
+
+      <h2 className="text-4xl md:text-5xl font-serif font-bold mb-5">
+        What You'll Find Here
+      </h2>
+
+      <p className="max-w-2xl mx-auto text-gray-400 text-base md:text-lg leading-7">
+        From quick weeknight meals to delicious treats, there's something
+        here for everyone who loves good food.
+      </p>
+
+    </div>
+
+
+    {/* CARDS */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      {/* CARD 1 */}
+      <div className="border border-gray-700 p-8 text-center hover:border-[#e0a0c7] transition">
+
+        <div className="text-4xl mb-5">
+          🍝
+        </div>
+
+        <h3 className="text-xl font-bold mb-4">
+          Easy Recipes
+        </h3>
+
+        <p className="text-gray-400 leading-7">
+          Simple recipes with easy-to-follow instructions for everyday
+          cooking.
+        </p>
+
+      </div>
+
+
+      {/* CARD 2 */}
+      <div className="border border-gray-700 p-8 text-center hover:border-[#e0a0c7] transition">
+
+        <div className="text-4xl mb-5">
+          ⚡
+        </div>
+
+        <h3 className="text-xl font-bold mb-4">
+          Quick & Easy
+        </h3>
+
+        <p className="text-gray-400 leading-7">
+          Delicious meals designed for busy days when you don't have much
+          time to cook.
+        </p>
+
+      </div>
+
+
+      {/* CARD 3 */}
+      <div className="border border-gray-700 p-8 text-center hover:border-[#e0a0c7] transition">
+
+        <div className="text-4xl mb-5">
+          🥗
+        </div>
+
+        <h3 className="text-xl font-bold mb-4">
+          Healthy Ideas
+        </h3>
+
+        <p className="text-gray-400 leading-7">
+          Fresh and delicious meal ideas to help you discover new ways to
+          enjoy food.
+        </p>
+
+      </div>
+
+
+      {/* CARD 4 */}
+      <div className="border border-gray-700 p-8 text-center hover:border-[#e0a0c7] transition">
+
+        <div className="text-4xl mb-5">
+          🍰
+        </div>
+
+        <h3 className="text-xl font-bold mb-4">
+          Sweet Treats
+        </h3>
+
+        <p className="text-gray-400 leading-7">
+          Desserts and sweet recipes for those moments when you want
+          something special.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{/* NEWSLETTER SECTION */}
+<section className="bg-[#111111] py-20">
+
+  <div className="max-w-[900px] mx-auto px-8 text-center">
+
+    <p className="text-[#e0a0c7] font-bold tracking-widest text-sm mb-4">
+      STAY IN THE LOOP
+    </p>
+
+    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-5">
+      Get Delicious Recipes in Your Inbox
+    </h2>
+
+    <p className="text-gray-400 text-base md:text-lg leading-7 max-w-2xl mx-auto mb-10">
+      Sign up for our newsletter and get new recipes, cooking ideas, and
+      helpful kitchen tips delivered straight to your inbox.
+    </p>
+
+
+    {/* FORM */}
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        alert("Thank you for subscribing!");
+      }}
+      className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto"
+    >
+
+      <input
+        type="email"
+        placeholder="Enter your email address"
+        required
+        className="flex-1 px-5 py-4 bg-[#202020] border border-gray-700 text-white outline-none focus:border-[#e0a0c7]"
+      />
+
+      <button
+        type="submit"
+        className="px-8 py-4 bg-[#e0a0c7] text-[#111111] font-bold hover:bg-[#d58db8] transition"
+      >
+        SUBSCRIBE
+      </button>
+
+    </form>
+
+    <p className="text-gray-600 text-sm mt-5">
+      No spam. Just delicious recipes and updates.
+    </p>
+
+  </div>
+
+</section>
+
     </section>
+    
   );
 }
 
