@@ -428,7 +428,7 @@ function About() {
 
 </section>
 
-   <Footer />
+   <Footers />
 
     </section>
     
