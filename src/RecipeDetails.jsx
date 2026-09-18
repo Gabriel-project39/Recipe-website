@@ -289,12 +289,7 @@ function RecipeDetails() {
               <span className="text-[#e0a0c7]">yum</span>
             </Link>
 
-            <Link
-              to="/categories"
-              className="text-[#e0a0c7] font-bold"
-            >
-              RECIPES
-            </Link>
+           
 
           </div>
 
