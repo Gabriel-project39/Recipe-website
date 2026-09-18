@@ -15,7 +15,7 @@ function RecipeDetails() {
       title: "Mini Freezer Stash #1",
 
       image:
-        "https://pinchofyum.com/tachyon/Mini-Freezer-Stash-1.jpg?resize=1200%2C1200&zoom=0.5",
+        "https://chatgpt.com/backend-api/estuary/content?id=file_0000000041f48211b07935a0fa525899&ts=497146&p=fs&cid=1&sig=1540fbd3236993b822ad2c5bc50f23aa751eacd33116caa46cffdadcd190db04&v=0",
 
       date: "SEPTEMBER 2, 2026",
 
