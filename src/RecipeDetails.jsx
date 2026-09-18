@@ -304,17 +304,7 @@ function RecipeDetails() {
 
       <div className="max-w-[1100px] mx-auto px-6 pt-10">
 
-        <Link
-          to="/categories"
-          className="
-            text-[#e0a0c7]
-            font-bold
-            hover:text-white
-            transition
-          "
-        >
-          ← BACK TO RECIPES
-        </Link>
+      
 
       </div>
 
