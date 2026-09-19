@@ -305,7 +305,7 @@ function RecipeCategorie() {
           <FaSearch />
         </Link>
 
-      </div
+      </div>
 
     </section>
   );
