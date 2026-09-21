@@ -131,7 +131,7 @@ function Home() {
               </a>
 
               <Link
-                to="/categories"
+                to=""
                 className="font-bold hover:text-[#e0a0c7] transition"
               >
                 RECIPES
