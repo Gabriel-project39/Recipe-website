@@ -98,7 +98,7 @@ function About() {
                 </Link>
 
                 <Link
-                  href="#about"
+                  href="/about"
                   onClick={() => setMenuOpen(false)}
                   className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
                 >
