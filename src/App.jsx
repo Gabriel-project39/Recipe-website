@@ -8,7 +8,7 @@ import RecipeDetails from "./RecipeDetails";
 import PopularRecipes from "./PopularRecipes";
 import RecipeCategories from "./RecipeCategories";
 import Footer from "./Footer";
-
+import PremiumRecipe from "./PremiumRecipe";
 
 
 import {
