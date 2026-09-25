@@ -1,4 +1,10 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import {
+  FaBars,
+  FaTimes,
+  FaSearch,
   FaHeart,
   FaRegHeart,
   FaPrint,
@@ -7,12 +13,18 @@ import {
   FaUtensils,
   FaCheck,
   FaArrowRight,
+  FaInstagram,
+  FaPinterestP,
+  FaFacebookF,
 } from "react-icons/fa";
 
 function PremiumRecipe() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [saved, setSaved] = useState(false);
+
   const ingredients = [
     {
-      section: "For the chicken",
+      title: "For the chicken",
       items: [
         "2 large chicken breasts",
         "1/2 cup grated Parmesan cheese",
@@ -25,12 +37,12 @@ function PremiumRecipe() {
       ],
     },
     {
-      section: "For the pasta",
+      title: "For the pasta",
       items: [
         "250g spaghetti or linguine",
         "1 cup heavy cream",
         "1/2 cup Parmesan cheese",
-        "1 lemon",
+        "1 fresh lemon",
         "2 cloves garlic",
         "2 tablespoons butter",
         "Fresh parsley",
@@ -42,99 +54,215 @@ function PremiumRecipe() {
     {
       number: "01",
       title: "Prepare the chicken",
-      description:
-        "Place the chicken breasts between two sheets of parchment paper and gently pound them until evenly thick. Season both sides with salt, black pepper and paprika.",
+      text: "Place the chicken breasts between two sheets of parchment paper and gently pound them until evenly thick. Season both sides with salt, black pepper and paprika.",
     },
     {
       number: "02",
       title: "Create the crispy coating",
-      description:
-        "Combine Parmesan cheese, breadcrumbs and minced garlic in a shallow bowl. Press each chicken breast firmly into the mixture until completely coated.",
+      text: "Combine Parmesan cheese, breadcrumbs and minced garlic in a shallow bowl. Press each chicken breast firmly into the mixture until completely coated.",
     },
     {
       number: "03",
       title: "Cook until golden",
-      description:
-        "Heat olive oil in a large skillet over medium heat. Cook the chicken for 4–5 minutes per side until deeply golden, crispy and cooked through.",
+      text: "Heat olive oil in a large skillet over medium heat. Cook the chicken for 4–5 minutes per side until deeply golden, crispy and cooked through.",
     },
     {
       number: "04",
       title: "Make the lemon cream sauce",
-      description:
-        "Melt the butter in the same pan. Add garlic and cook briefly before adding cream, Parmesan and fresh lemon juice. Stir until smooth and creamy.",
+      text: "Melt the butter in the same pan. Add garlic and cook briefly before adding cream, Parmesan and fresh lemon juice. Stir until smooth and creamy.",
     },
     {
       number: "05",
       title: "Bring everything together",
-      description:
-        "Toss the cooked pasta through the creamy lemon sauce. Slice the crispy chicken and arrange it over the pasta. Finish with Parmesan and fresh parsley.",
+      text: "Toss the cooked pasta through the creamy lemon sauce. Slice the crispy chicken and arrange it over the pasta. Finish with Parmesan and fresh parsley.",
+    },
+  ];
+
+  const relatedRecipes = [
+    {
+      image: "/images/latest2.jpg",
+      category: "DINNER",
+      title: "Creamy Garlic Butter Chicken",
+    },
+    {
+      image: "/images/recipe1.jpg",
+      category: "PASTA",
+      title: "Roasted Tomato Basil Pasta",
+    },
+    {
+      image: "/images/recipe2.jpg",
+      category: "QUICK & EASY",
+      title: "Golden Garlic Chicken",
     },
   ];
 
   return (
-    <main className="min-h-screen bg-[#f7f4ef] text-[#1c1b19]">
+    <div className="min-h-screen overflow-x-hidden bg-[#f7f4ef] text-[#1c1b19]">
 
       {/* =====================================================
-          TOP BAR
+          NAVBAR
       ===================================================== */}
 
-      <div className="border-b border-[#ded9d0] bg-[#f7f4ef]">
+      <header className="bg-[#111111] border-b border-gray-700">
 
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-8">
 
-          <p className="text-xs tracking-[0.3em] uppercase text-[#77716a]">
-            The Recipe Collection
-          </p>
+          <div className="h-24 flex items-center justify-between">
 
-          <p className="hidden sm:block text-xs tracking-[0.2em] uppercase text-[#77716a]">
-            Dinner · 45 Minutes
-          </p>
+            {/* LOGO */}
+
+            <Link
+              to="/"
+              className="text-4xl md:text-5xl font-serif"
+            >
+              <span className="text-[#e0a0c7]">pinch</span>
+              <span className="text-gray-400">of</span>
+              <span className="text-[#e0a0c7]">yum</span>
+            </Link>
+
+
+            {/* DESKTOP MENU */}
+
+            <nav className="hidden md:flex items-center gap-10">
+
+              <Link
+                to="/"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                HOME
+              </Link>
+
+              <Link
+                to="/about"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                ABOUT
+              </Link>
+
+              <Link
+                to="/recipes"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                RECIPES
+              </Link>
+
+              <a
+                href="#start"
+                className="font-bold hover:text-[#e0a0c7] transition"
+              >
+                START HERE
+              </a>
+
+              <Link
+                to="/categories"
+                className="text-[#e0a0c7] text-xl"
+                aria-label="Search recipes"
+              >
+                <FaSearch />
+              </Link>
+
+            </nav>
+
+
+            {/* MOBILE BUTTON */}
+
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden text-[#e0a0c7] text-3xl p-2"
+              aria-label="Open menu"
+            >
+              {menuOpen ? <FaTimes /> : <FaBars />}
+            </button>
+
+          </div>
+
+
+          {/* MOBILE MENU */}
+
+          {menuOpen && (
+            <div className="md:hidden border-t border-gray-700">
+
+              <nav className="flex flex-col py-5">
+
+                <Link
+                  to="/"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  HOME
+                </Link>
+
+                <Link
+                  to="/about"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  ABOUT
+                </Link>
+
+                <Link
+                  to="/recipes"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  RECIPES
+                </Link>
+
+                <a
+                  href="#start"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  START HERE
+                </a>
+
+                <Link
+                  to="/categories"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center gap-3 px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
+                >
+                  <FaSearch />
+                  SEARCH
+                </Link>
+
+              </nav>
+
+            </div>
+          )}
 
         </div>
 
-      </div>
+      </header>
 
 
       {/* =====================================================
           HERO
       ===================================================== */}
 
-      <section className="max-w-7xl mx-auto px-6 pt-10 md:pt-16">
+      <section
+        id="recipe"
+        className="mx-auto max-w-7xl px-5 pb-16 pt-8 sm:px-8 sm:pt-12 lg:pb-24"
+      >
 
-        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
           {/* IMAGE */}
 
           <div className="relative">
 
-            <div className="overflow-hidden">
+            <div className="aspect-[4/5] overflow-hidden sm:aspect-[16/11] lg:aspect-[4/5]">
 
               <img
                 src="/images/latest1.jpg"
-                alt="Crispy Parmesan Chicken with Creamy Lemon Pasta"
-                className="
-                  w-full
-                  h-[420px]
-                  sm:h-[520px]
-                  lg:h-[650px]
-                  object-cover
-                "
+                alt="Crispy Parmesan Chicken with Lemon Pasta"
+                className="h-full w-full object-cover"
               />
 
             </div>
 
-            {/* IMAGE LABEL */}
+            <div className="absolute bottom-4 left-4 bg-[#f7f4ef] px-4 py-3 sm:bottom-6 sm:left-6">
 
-            <div className="
-              absolute
-              left-5
-              bottom-5
-              bg-[#f7f4ef]
-              px-5
-              py-3
-            ">
-
-              <p className="text-[10px] tracking-[0.3em] uppercase font-bold">
+              <p className="text-[9px] font-bold uppercase tracking-[0.3em]">
                 Chef's Table
               </p>
 
@@ -143,47 +271,31 @@ function PremiumRecipe() {
           </div>
 
 
-          {/* CONTENT */}
+          {/* INFORMATION */}
 
-          <div className="py-4 lg:py-10">
+          <div>
 
-            <p className="
-              text-[#9a6748]
-              text-sm
-              font-bold
-              tracking-[0.3em]
-              uppercase
-            ">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9a6748]">
               Signature Dinner
             </p>
 
 
-            <h1 className="
-              mt-5
-              font-serif
-              text-5xl
-              sm:text-6xl
-              lg:text-7xl
-              leading-[0.95]
-              tracking-tight
-            ">
+            <h1 className="mt-4 font-serif text-5xl leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+
               Crispy Parmesan
+
               <span className="block italic text-[#9a6748]">
                 Chicken
               </span>
+
               <span className="block">
                 with Lemon Pasta
               </span>
+
             </h1>
 
 
-            <p className="
-              mt-7
-              text-lg
-              leading-8
-              text-[#68625c]
-              max-w-xl
-            ">
+            <p className="mt-6 max-w-xl text-base leading-7 text-[#68625c] sm:text-lg sm:leading-8">
               Golden, parmesan-crusted chicken served over
               silky lemon cream pasta. Rich enough for a
               special dinner, simple enough for a Tuesday night.
@@ -192,15 +304,13 @@ function PremiumRecipe() {
 
             {/* RATING */}
 
-            <div className="flex items-center gap-4 mt-7">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
 
               <div className="flex gap-1 text-[#c68b3c]">
 
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <FaStar key={star} className="text-sm" />
+                ))}
 
               </div>
 
@@ -209,107 +319,80 @@ function PremiumRecipe() {
               </span>
 
               <span className="text-sm text-[#77716a]">
-                · 128 reviews
+                128 reviews
               </span>
 
             </div>
 
 
-            {/* ACTIONS */}
+            {/* BUTTONS */}
 
-            <div className="flex flex-wrap gap-3 mt-8">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
 
-              <button className="
-                flex
-                items-center
-                gap-3
-                bg-[#1c1b19]
-                text-white
-                px-6
-                py-4
-                text-sm
-                font-bold
-                tracking-wider
-                uppercase
-                hover:bg-[#9a6748]
-                transition
-              ">
-                <FaRegHeart />
-                Save Recipe
+              <button
+                onClick={() => setSaved(!saved)}
+                className="flex items-center justify-center gap-3 bg-[#1c1b19] px-6 py-4 text-xs font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#9a6748]"
+              >
+                {saved ? <FaHeart /> : <FaRegHeart />}
+                {saved ? "Saved" : "Save Recipe"}
               </button>
 
 
-              <button className="
-                flex
-                items-center
-                gap-3
-                border
-                border-[#bbb4aa]
-                px-6
-                py-4
-                text-sm
-                font-bold
-                tracking-wider
-                uppercase
-                hover:bg-white
-                transition
-              ">
+              <button className="flex items-center justify-center gap-3 border border-[#bbb4aa] px-6 py-4 text-xs font-bold uppercase tracking-[0.15em] transition hover:bg-white">
                 <FaPrint />
-                Print
+                Print Recipe
               </button>
 
             </div>
 
 
-            {/* RECIPE STATS */}
+            {/* STATS */}
 
-            <div className="
-              grid
-              grid-cols-2
-              sm:grid-cols-4
-              border-t
-              border-b
-              border-[#d7d1c8]
-              mt-10
-              py-6
-              gap-5
-            ">
+            <div className="mt-9 grid grid-cols-2 border-y border-[#d7d1c8] py-6 sm:grid-cols-4">
 
-              <div>
-                <p className="text-[10px] uppercase tracking-widest text-[#888078]">
+              <div className="border-b border-[#d7d1c8] pb-4 sm:border-b-0 sm:border-r sm:pb-0 sm:pr-4">
+                <FaClock className="text-[#9a6748]" />
+
+                <p className="mt-2 text-[10px] uppercase tracking-widest text-[#888078]">
                   Prep
                 </p>
-                <p className="font-semibold mt-1">
+
+                <p className="mt-1 font-semibold">
                   15 min
                 </p>
               </div>
 
 
-              <div>
-                <p className="text-[10px] uppercase tracking-widest text-[#888078]">
+              <div className="border-b border-[#d7d1c8] pb-4 pl-4 sm:border-b-0 sm:border-r sm:pb-0 sm:pl-4 sm:pr-4">
+                <FaUtensils className="text-[#9a6748]" />
+
+                <p className="mt-2 text-[10px] uppercase tracking-widest text-[#888078]">
                   Cook
                 </p>
-                <p className="font-semibold mt-1">
+
+                <p className="mt-1 font-semibold">
                   30 min
                 </p>
               </div>
 
 
-              <div>
+              <div className="pt-4 sm:border-r sm:border-[#d7d1c8] sm:pl-4 sm:pt-0 sm:pr-4">
                 <p className="text-[10px] uppercase tracking-widest text-[#888078]">
                   Total
                 </p>
-                <p className="font-semibold mt-1">
+
+                <p className="mt-1 font-semibold">
                   45 min
                 </p>
               </div>
 
 
-              <div>
+              <div className="border-l border-[#d7d1c8] pl-4 pt-4 sm:border-l-0 sm:pl-4 sm:pt-0">
                 <p className="text-[10px] uppercase tracking-widest text-[#888078]">
                   Serves
                 </p>
-                <p className="font-semibold mt-1">
+
+                <p className="mt-1 font-semibold">
                   4 people
                 </p>
               </div>
@@ -327,50 +410,27 @@ function PremiumRecipe() {
           RECIPE BODY
       ===================================================== */}
 
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <section className="border-t border-[#ded9d0] bg-[#eee9e1]">
 
-        <div className="grid lg:grid-cols-[350px_1fr] gap-16">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[330px_1fr] lg:gap-20 lg:py-24">
 
+          {/* INGREDIENTS */}
 
-          {/* =================================================
-              INGREDIENTS
-          ================================================= */}
+          <aside id="ingredients">
 
-          <aside>
+            <div className="lg:sticky lg:top-28">
 
-            <div className="
-              lg:sticky
-              lg:top-8
-            ">
-
-              <p className="
-                text-[#9a6748]
-                text-xs
-                uppercase
-                tracking-[0.3em]
-                font-bold
-              ">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9a6748]">
                 What you'll need
               </p>
 
-
-              <h2 className="
-                font-serif
-                text-4xl
-                mt-3
-              ">
+              <h2 className="mt-3 font-serif text-4xl sm:text-5xl">
                 Ingredients
               </h2>
 
-
-              <p className="
-                text-sm
-                text-[#77716a]
-                mt-3
-                leading-6
-              ">
-                Everything you need to create this dish
-                from start to finish.
+              <p className="mt-4 text-sm leading-6 text-[#77716a]">
+                Everything you need to create this dish from
+                start to finish.
               </p>
 
 
@@ -378,45 +438,24 @@ function PremiumRecipe() {
 
                 {ingredients.map((group) => (
 
-                  <div key={group.section}>
+                  <div key={group.title}>
 
-                    <h3 className="
-                      font-semibold
-                      text-sm
-                      uppercase
-                      tracking-widest
-                      border-b
-                      border-[#d8d2c9]
-                      pb-3
-                    ">
-                      {group.section}
+                    <h3 className="border-b border-[#d2ccc3] pb-3 text-xs font-bold uppercase tracking-widest">
+                      {group.title}
                     </h3>
 
-
-                    <ul className="mt-4 space-y-4">
+                    <ul className="mt-4 space-y-3">
 
                       {group.items.map((item) => (
 
                         <li
                           key={item}
-                          className="
-                            flex
-                            items-start
-                            gap-3
-                            text-[#5e5953]
-                            text-sm
-                            leading-6
-                          "
+                          className="flex gap-3 text-sm leading-6 text-[#5e5953]"
                         >
 
-                          <FaCheck className="
-                            text-[#9a6748]
-                            mt-1
-                            text-xs
-                            shrink-0
-                          " />
+                          <FaCheck className="mt-1 shrink-0 text-xs text-[#9a6748]" />
 
-                          {item}
+                          <span>{item}</span>
 
                         </li>
 
@@ -435,35 +474,17 @@ function PremiumRecipe() {
           </aside>
 
 
-          {/* =================================================
-              INSTRUCTIONS
-          ================================================= */}
+          {/* METHOD */}
 
-          <div>
+          <div id="method">
 
-            <div className="
-              border-b
-              border-[#d8d2c9]
-              pb-8
-            ">
+            <div className="border-b border-[#d2ccc3] pb-8">
 
-              <p className="
-                text-[#9a6748]
-                text-xs
-                uppercase
-                tracking-[0.3em]
-                font-bold
-              ">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9a6748]">
                 The method
               </p>
 
-
-              <h2 className="
-                font-serif
-                text-4xl
-                md:text-5xl
-                mt-3
-              ">
+              <h2 className="mt-3 font-serif text-4xl sm:text-5xl">
                 How to make it
               </h2>
 
@@ -474,93 +495,46 @@ function PremiumRecipe() {
 
               {steps.map((step) => (
 
-                <div
+                <article
                   key={step.number}
-                  className="
-                    grid
-                    sm:grid-cols-[80px_1fr]
-                    gap-5
-                    py-10
-                    border-b
-                    border-[#d8d2c9]
-                  "
+                  className="grid gap-4 border-b border-[#d2ccc3] py-9 sm:grid-cols-[70px_1fr] sm:gap-6 sm:py-12"
                 >
 
-                  <div>
-
-                    <span className="
-                      font-serif
-                      text-3xl
-                      text-[#9a6748]
-                    ">
-                      {step.number}
-                    </span>
-
-                  </div>
-
+                  <span className="font-serif text-3xl text-[#9a6748]">
+                    {step.number}
+                  </span>
 
                   <div>
 
-                    <h3 className="
-                      font-serif
-                      text-2xl
-                      md:text-3xl
-                    ">
+                    <h3 className="font-serif text-2xl sm:text-3xl">
                       {step.title}
                     </h3>
 
-
-                    <p className="
-                      mt-4
-                      text-[#68625c]
-                      leading-8
-                      max-w-2xl
-                    ">
-                      {step.description}
+                    <p className="mt-4 max-w-2xl text-sm leading-7 text-[#68625c] sm:text-base sm:leading-8">
+                      {step.text}
                     </p>
 
                   </div>
 
-                </div>
+                </article>
 
               ))}
 
             </div>
 
 
-            {/* =================================================
-                CHEF NOTE
-            ================================================= */}
+            {/* CHEF NOTE */}
 
-            <div className="
-              mt-12
-              bg-[#e9e1d5]
-              p-8
-              md:p-10
-            ">
+            <div className="mt-10 bg-[#dfd4c5] p-7 sm:p-10">
 
-              <p className="
-                text-[#9a6748]
-                text-xs
-                uppercase
-                tracking-[0.3em]
-                font-bold
-              ">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9a6748]">
                 Chef's note
               </p>
 
-
-              <p className="
-                font-serif
-                italic
-                text-2xl
-                md:text-3xl
-                leading-relaxed
-                mt-4
-              ">
-                Don't rush the chicken. Let the crust
-                develop a deep golden color before turning
-                it — that's where the flavor lives.
+              <p className="mt-4 font-serif text-2xl italic leading-relaxed sm:text-3xl">
+                Don't rush the chicken. Let the crust develop
+                a deep golden color before turning it — that's
+                where the flavor lives.
               </p>
 
             </div>
@@ -576,57 +550,35 @@ function PremiumRecipe() {
           NUTRITION
       ===================================================== */}
 
-      <section className="bg-[#1c1b19] text-white">
+      <section
+        id="nutrition"
+        className="bg-[#1c1b19] text-white"
+      >
 
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
 
-          <div className="
-            flex
-            flex-col
-            md:flex-row
-            md:items-end
-            justify-between
-            gap-8
-          ">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 
             <div>
 
-              <p className="
-                text-[#c68b3c]
-                text-xs
-                uppercase
-                tracking-[0.3em]
-                font-bold
-              ">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#c68b3c]">
                 Per serving
               </p>
 
-              <h2 className="
-                font-serif
-                text-4xl
-                mt-3
-              ">
+              <h2 className="mt-3 font-serif text-4xl sm:text-5xl">
                 Nutrition
               </h2>
 
             </div>
 
-
-            <p className="text-sm text-gray-400">
+            <p className="text-xs text-gray-500">
               Nutritional values are estimates.
             </p>
 
           </div>
 
 
-          <div className="
-            grid
-            grid-cols-2
-            md:grid-cols-5
-            mt-10
-            border-t
-            border-gray-700
-          ">
+          <div className="mt-10 grid grid-cols-2 border-t border-gray-700 md:grid-cols-5">
 
             {[
               ["Calories", "642"],
@@ -638,26 +590,14 @@ function PremiumRecipe() {
 
               <div
                 key={label}
-                className="
-                  py-7
-                  border-b
-                  md:border-b-0
-                  md:border-r
-                  border-gray-700
-                  first:md:border-l
-                  px-5
-                "
+                className="border-b border-gray-700 px-4 py-6 sm:px-6 md:border-b-0 md:border-r md:first:border-l"
               >
 
-                <p className="text-gray-500 text-xs uppercase tracking-widest">
+                <p className="text-[10px] uppercase tracking-widest text-gray-500">
                   {label}
                 </p>
 
-                <p className="
-                  font-serif
-                  text-3xl
-                  mt-2
-                ">
+                <p className="mt-2 font-serif text-3xl">
                   {value}
                 </p>
 
@@ -673,65 +613,243 @@ function PremiumRecipe() {
 
 
       {/* =====================================================
-          BOTTOM CTA
+          RELATED RECIPES
       ===================================================== */}
 
-      <section className="bg-[#f7f4ef]">
+      <section
+        id="more"
+        className="bg-[#f7f4ef] px-5 py-16 sm:px-8 lg:py-24"
+      >
 
-        <div className="
-          max-w-4xl
-          mx-auto
-          px-6
-          py-20
-          text-center
-        ">
+        <div className="mx-auto max-w-7xl">
 
-          <p className="
-            text-[#9a6748]
-            text-xs
-            uppercase
-            tracking-[0.3em]
-            font-bold
-          ">
-            More from the kitchen
-          </p>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
 
+            <div>
 
-          <h2 className="
-            font-serif
-            text-4xl
-            md:text-5xl
-            mt-4
-          ">
-            Ready for your next recipe?
-          </h2>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9a6748]">
+                Keep cooking
+              </p>
+
+              <h2 className="mt-3 font-serif text-4xl sm:text-5xl">
+                More recipes
+              </h2>
+
+            </div>
 
 
-          <button className="
-            mt-8
-            inline-flex
-            items-center
-            gap-3
-            bg-[#1c1b19]
-            text-white
-            px-7
-            py-4
-            font-bold
-            uppercase
-            tracking-widest
-            text-sm
-            hover:bg-[#9a6748]
-            transition
-          ">
-            Explore Recipes
-            <FaArrowRight />
-          </button>
+            <button className="flex items-center gap-3 self-start text-xs font-bold uppercase tracking-widest transition hover:text-[#9a6748] sm:self-auto">
+              View all
+              <FaArrowRight />
+            </button>
+
+          </div>
+
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            {relatedRecipes.map((recipe) => (
+
+              <article
+                key={recipe.title}
+                className="group cursor-pointer"
+              >
+
+                <div className="aspect-[4/3] overflow-hidden">
+
+                  <img
+                    src={recipe.image}
+                    alt={recipe.title}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+
+                </div>
+
+
+                <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.25em] text-[#9a6748]">
+                  {recipe.category}
+                </p>
+
+
+                <h3 className="mt-2 font-serif text-2xl transition group-hover:text-[#9a6748]">
+                  {recipe.title}
+                </h3>
+
+              </article>
+
+            ))}
+
+          </div>
 
         </div>
 
       </section>
 
-    </main>
+
+      {/* =====================================================
+          NEWSLETTER
+      ===================================================== */}
+
+      <section className="bg-[#dfd4c5]">
+
+        <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-8 lg:py-20">
+
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9a6748]">
+            From our kitchen to yours
+          </p>
+
+          <h2 className="mt-4 font-serif text-4xl sm:text-5xl">
+            New recipes, delivered.
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#68625c]">
+            Get thoughtfully developed recipes, cooking ideas
+            and kitchen inspiration delivered straight to your inbox.
+          </p>
+
+
+          <form className="mx-auto mt-8 flex max-w-lg flex-col gap-3 sm:flex-row">
+
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="min-w-0 flex-1 border border-[#bcb2a5] bg-[#f7f4ef] px-5 py-4 text-sm outline-none focus:border-[#9a6748]"
+            />
+
+            <button className="bg-[#1c1b19] px-7 py-4 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-[#9a6748]">
+              Subscribe
+            </button>
+
+          </form>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
+
+      <footer className="bg-[#11100f] text-white">
+
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
+
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+
+            {/* BRAND */}
+
+            <div className="lg:col-span-2">
+
+              <h2 className="font-serif text-3xl">
+                Maison<span className="text-[#9a6748]">Table</span>
+              </h2>
+
+              <p className="mt-4 max-w-md text-sm leading-7 text-gray-500">
+                Recipes designed for beautiful everyday cooking.
+                Thoughtful ingredients, practical techniques and
+                food worth gathering around.
+              </p>
+
+
+              <div className="mt-6 flex gap-3">
+
+                <button className="flex h-10 w-10 items-center justify-center border border-gray-700 transition hover:border-[#9a6748] hover:text-[#c68b3c]">
+                  <FaInstagram />
+                </button>
+
+                <button className="flex h-10 w-10 items-center justify-center border border-gray-700 transition hover:border-[#9a6748] hover:text-[#c68b3c]">
+                  <FaPinterestP />
+                </button>
+
+                <button className="flex h-10 w-10 items-center justify-center border border-gray-700 transition hover:border-[#9a6748] hover:text-[#c68b3c]">
+                  <FaFacebookF />
+                </button>
+
+              </div>
+
+            </div>
+
+
+            {/* EXPLORE */}
+
+            <div>
+
+              <h3 className="text-xs font-bold uppercase tracking-widest">
+                Explore
+              </h3>
+
+              <div className="mt-5 space-y-3 text-sm text-gray-500">
+
+                <a href="#" className="block hover:text-white">
+                  All Recipes
+                </a>
+
+                <a href="#" className="block hover:text-white">
+                  Quick & Easy
+                </a>
+
+                <a href="#" className="block hover:text-white">
+                  Dinner
+                </a>
+
+                <a href="#" className="block hover:text-white">
+                  Vegetarian
+                </a>
+
+                <a href="#" className="block hover:text-white">
+                  Desserts
+                </a>
+
+              </div>
+
+            </div>
+
+
+            {/* INFORMATION */}
+
+            <div>
+
+              <h3 className="text-xs font-bold uppercase tracking-widest">
+                Information
+              </h3>
+
+              <div className="mt-5 space-y-3 text-sm text-gray-500">
+
+                <a href="#" className="block hover:text-white">
+                  About
+                </a>
+
+                <a href="#" className="block hover:text-white">
+                  Contact
+                </a>
+
+                <a href="#" className="block hover:text-white">
+                  Privacy
+                </a>
+
+                <a href="#" className="block hover:text-white">
+                  Terms
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div className="mt-12 border-t border-gray-800 pt-6 text-xs text-gray-600">
+
+            © 2026 MaisonTable. All rights reserved.
+
+          </div>
+
+        </div>
+
+      </footer>
+
+    </div>
   );
 }
 

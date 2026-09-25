@@ -8,7 +8,7 @@ import RecipeDetails from "./RecipeDetails";
 import PopularRecipes from "./PopularRecipes";
 import RecipeCategories from "./RecipeCategories";
 import Footer from "./Footer";
-import PremiumRecipe from "./PremiumRecipe.jsx";
+import PremiumRecipe from "./PremiumRecipe";
 
 
 import {
@@ -131,7 +131,7 @@ function Home() {
               </a>
 
               <Link
-                to=""
+                to="/recipes"
                 className="font-bold hover:text-[#e0a0c7] transition"
               >
                 RECIPES
@@ -192,7 +192,7 @@ function Home() {
                 </a>
 
                 <Link
-                  to=""
+                  to="/recipes"
                   onClick={() => setMenuOpen(false)}
                   className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
                 >
@@ -659,6 +659,7 @@ function App() {
 />
 
 <Route path="/about" element={<About />} />
+<Route path="/recipes" element={<PremiumRecipe />} />
 
 
       {/* RECIPES */}

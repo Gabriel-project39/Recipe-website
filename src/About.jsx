@@ -38,14 +38,14 @@ function About() {
               </Link>
 
               <Link
-                href="/about"
+                to="/about"
                 className="font-bold hover:text-[#e0a0c7] transition"
               >
                 ABOUT
               </Link>
 
               <Link
-                to=""
+                to="/recipes"
                 className="font-bold hover:text-[#e0a0c7] transition"
               >
                 RECIPES
@@ -98,7 +98,7 @@ function About() {
                 </Link>
 
                 <Link
-                  href="/about"
+                  to="/about"
                   onClick={() => setMenuOpen(false)}
                   className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
                 >
@@ -106,7 +106,7 @@ function About() {
                 </Link>
 
                 <Link
-                  to=""
+                  to="/recipes"
                   onClick={() => setMenuOpen(false)}
                   className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
                 >
