@@ -437,10 +437,23 @@ const recipes = {
 };
 
 
+function slugify(name) {
+  return name
+    .toLowerCase()
+    .replace(/[’']/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 function Menu() {
   const { slug } = useParams();
 
-  const recipe = recipes[slug];
+  // Find the recipe by the readable URL slug.
+  // This works with the current recipe object keys ("19 Cozy...", "2", "3", etc.)
+  // without requiring you to rename all 12 recipe keys.
+  const recipe = Object.values(recipes).find(
+    (item) => slugify(item.name) === slug
+  );
 
   if (!recipe) {
     return (
