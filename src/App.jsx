@@ -8,6 +8,7 @@ import RecipeDetails from "./RecipeDetails";
 import PopularRecipes from "./PopularRecipes";
 import RecipeCategories from "./RecipeCategories";
 import Footer from "./Footer";
+import Menu from "./Menu";
 import PremiumRecipe from "./PremiumRecipe";
 
 
@@ -677,6 +678,11 @@ function App() {
         path="/recipe-details/:id"
         element={<RecipeDetails />}
       />
+
+    <Route
+  path="/menu/:slug"
+  element={<Menu />}
+/>
 
     </Routes>
   );

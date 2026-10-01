@@ -319,11 +319,15 @@ function PremiumRecipe() {
               },
             ].map((recipe, index) => (
 
-              <Link
-                to={`/recipe-details/${index + 1}`}
-                key={recipe.name}
-                className="group flex items-start gap-4 min-w-0"
-              >
+          <Link
+  to={`/menu/${recipe.name
+    .toLowerCase()
+    .replace(/[’']/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")}`}
+  key={recipe.name}
+  className="group flex items-start gap-4 min-w-0"
+>
 
                 {/* RECIPE IMAGE */}
 
