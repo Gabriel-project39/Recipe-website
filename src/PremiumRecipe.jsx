@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaBars, FaTimes, FaSearch, FaArrowLeft, FaClock, FaUtensils } from "react-icons/fa";
+import Footer from "./Footer";
 
 
 
