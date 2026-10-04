@@ -385,6 +385,8 @@ function PremiumRecipe() {
 
         </div>
 
+         <Footer />
+
       </section>
 
 
