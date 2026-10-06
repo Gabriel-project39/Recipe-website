@@ -11,6 +11,7 @@ import Footer from "./Footer";
 import Menu from "./Menu";
 import PremiumRecipe from "./PremiumRecipe";
 import Start from "./Start";
+import Food from "./food";
 
 
 
@@ -141,7 +142,7 @@ function Home() {
               </Link>
 
               <a
-                href="/start"
+                href="/start-here"
                 className="font-bold hover:text-[#e0a0c7] transition"
               >
                 START HERE
@@ -203,7 +204,7 @@ function Home() {
                 </Link>
 
                 <a
-                  href="/start"
+                  href="/start-here"
                   onClick={() => setMenuOpen(false)}
                   className="px-4 py-4 font-bold hover:bg-[#222222] hover:text-[#e0a0c7]"
                 >
@@ -663,8 +664,9 @@ function App() {
 
 <Route path="/about" element={<About />} />
 <Route path="/recipes" element={<PremiumRecipe />} />
- <Route path="/start" element={<Start />} />
+ <Route path="/start-here" element={<Start />} />
 
+  <Route path="/food/:id" element={<Food />} />
 
       {/* RECIPES */}
 
@@ -672,6 +674,8 @@ function App() {
         path="/categories"
         element={<RecipeCategorie />}
       />
+
+
 
 
       {/* RECIPE DETAILS */}
