@@ -227,31 +227,6 @@ const Start = () => {
       </main>
 
 
-      {/* ================= FLOATING SEARCH ================= */}
-
-      <button
-        className="
-          fixed
-          right-5
-          bottom-8
-          md:bottom-24
-          w-12
-          h-12
-          rounded-full
-          bg-[#8d3f70]
-          flex
-          items-center
-          justify-center
-          shadow-lg
-          hover:scale-110
-          hover:bg-[#a84d87]
-          transition
-        "
-        aria-label="Search"
-      >
-        <FaSearch className="text-white" size={18} />
-      </button>
-
     </div>
   );
 };
