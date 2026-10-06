@@ -363,7 +363,7 @@ const Start = () => {
           <div className="h-[400px] md:h-[560px] overflow-hidden">
 
             <img
-              src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85"
+              src="https://pinchofyum.com/content/assets/images/start-here-rigatoni@2x.jpg"
               alt="Delicious pasta"
               className="w-full h-full object-cover"
             />
