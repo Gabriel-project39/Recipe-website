@@ -44,7 +44,7 @@ const recipes = {
   "2": {
     name: "Best Anytime Baked Chicken Meatballs",
     image:
-      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80",
+      "",
     rating: "4.9",
     reviews: "800",
     time: "35 minutes",

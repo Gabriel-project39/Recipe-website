@@ -22,7 +22,7 @@ const Start = () => {
       title: "The Best Detox Crockpot Lentil Soup",
       description:
         "Detox Crockpot Lentil Soup – a clean and simple soup made with onions, garlic, carrots, olive oil, squash, and LENTILS! Super healthy and easy to make.",
-      image: "/recipes/detox-lentil-soup.jpg",
+      image: "https://pinchofyum.com/tachyon/Crockpot-Lentil-Soup-3-Homepage.jpg?fit=200%2C300&zoom=1",
     },
     {
       id: "green-sauce",
