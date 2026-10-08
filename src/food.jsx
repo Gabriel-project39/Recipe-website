@@ -54,7 +54,7 @@ const Food = () => {
 
     "detox-lentil-soup": {
       title: "The Best Detox Crockpot Lentil Soup",
-      image: "/recipes/detox-lentil-soup.jpg",
+      image: "https://pinchofyum.com/tachyon/Crockpot-Lentil-Soup-3-Homepage.jpg?fit=200%2C300&zoom=1",
       description:
         "A clean and simple lentil soup made with onions, garlic, carrots, olive oil, squash, and lentils.",
       prepTime: "15 minutes",
