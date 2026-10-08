@@ -22,14 +22,14 @@ const Start = () => {
       title: "The Best Detox Crockpot Lentil Soup",
       description:
         "Detox Crockpot Lentil Soup – a clean and simple soup made with onions, garlic, carrots, olive oil, squash, and LENTILS! Super healthy and easy to make.",
-      image: "",
+      image: "https://pinchofyum.com/tachyon/Crockpot-Lentil-Soup-3-Homepage.jpg?fit=200%2C300&zoom=1",
     },
     {
       id: "green-sauce",
       title: "5 Minute Magic Green Sauce",
       description:
         "5 Minute Magic Green Sauce – SO AWESOME. Made with easy ingredients like avocado, olive oil, cilantro, lime, garlic, and parsley! Vegan.",
-      image: "/recipes/green-sauce.jpg",
+      image: "https://pinchofyum.com/tachyon/green-sauce-6.jpg?fit=185%2C300&zoom=1",
     },
     {
       id: "thai-sweet-potato-curry",

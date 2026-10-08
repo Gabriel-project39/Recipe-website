@@ -93,7 +93,7 @@ const Food = () => {
 
     "green-sauce": {
       title: "5 Minute Magic Green Sauce",
-      image: "/recipes/green-sauce.jpg",
+      image: "https://pinchofyum.com/tachyon/green-sauce-6.jpg?fit=185%2C300&zoom=1",
       description:
         "A bright, creamy and fresh green sauce made with avocado, olive oil, cilantro, lime, garlic, and parsley.",
       prepTime: "5 minutes",
