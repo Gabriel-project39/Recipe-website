@@ -36,7 +36,7 @@ const Start = () => {
       title: "Creamy Thai Sweet Potato Curry",
       description:
         "Creamy Thai Sweet Potato Curry – packed with nutrition! Our favorite easy, healthy, winter comfort food recipe.",
-      image: "/recipes/thai-sweet-potato-curry.jpg",
+      image: "https://pinchofyum.com/tachyon/feature-curry-1.jpg?fit=200%2C300&zoom=1",
     },
   ];
 

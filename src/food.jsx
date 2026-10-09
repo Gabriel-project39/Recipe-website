@@ -127,7 +127,7 @@ const Food = () => {
 
     "thai-sweet-potato-curry": {
       title: "Creamy Thai Sweet Potato Curry",
-      image: "/recipes/thai-sweet-potato-curry.jpg",
+      image: "https://pinchofyum.com/tachyon/feature-curry-1.jpg?fit=200%2C300&zoom=1",
       description:
         "A creamy, comforting Thai sweet potato curry packed with vegetables and warming spices.",
       prepTime: "15 minutes",
