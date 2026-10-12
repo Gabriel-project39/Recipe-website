@@ -134,7 +134,7 @@ const Start = () => {
       title: "Instant Pot Hawaiian Chicken Tacos with Jalapeño Ranch Slaw",
       description:
         "These Instant Pot Hawaiian Chicken Tacos are out of this WORLD. Juicy pineapple and spiced chicken crisped under the broiler, tucked into tortillas, and rolled up with creamy jalapeño ranch slaw.",
-      image: "/recipes/hawaiian-chicken-tacos.jpg",
+      image: "https://pinchofyum.com/tachyon/Hawaiian-Chicken-Tacos-5.jpg?fit=200%2C300&zoom=1",
     },
     {
       id: "red-curry-lentils",

@@ -433,7 +433,7 @@ const Food = () => {
 
     "hawaiian-chicken-tacos": {
       title: "Instant Pot Hawaiian Chicken Tacos with Jalapeño Ranch Slaw",
-      image: "/recipes/hawaiian-chicken-tacos.jpg",
+      image: "https://pinchofyum.com/tachyon/Hawaiian-Chicken-Tacos-5.jpg?fit=200%2C300&zoom=1",
       description:
         "Juicy pineapple chicken with a creamy jalapeño ranch slaw tucked into warm tortillas.",
       prepTime: "15 minutes",
