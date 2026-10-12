@@ -120,14 +120,14 @@ const Start = () => {
       title: "19 Cozy Crockpot Recipes",
       description:
         "Hearty soups, saucy pastas, big-flavor chilis, and tender shredded meats that basically make themselves. These cozy crockpot recipes deliver!",
-      image: "/recipes/cozy-crockpot.jpg",
+      image: "https://pinchofyum.com/tachyon/Cozy-Crockpot-Recipes-02-scaled.jpg?fit=300%2C300&zoom=1",
     },
     {
       id: "instant-pot-mac-cheese",
       title: "Instant Pot Mac and Cheese",
       description:
         "Instant Pot Mac and Cheese – made with 5 real food ingredients. This is SO MUCH BETTER than any mac and cheese I've ever had!",
-      image: "/recipes/instant-pot-mac-cheese.jpg",
+      image: "https://pinchofyum.com/tachyon/Instant-Pot-Mac-and-Cheese.jpg?fit=200%2C300&zoom=1",
     },
     {
       id: "hawaiian-chicken-tacos",

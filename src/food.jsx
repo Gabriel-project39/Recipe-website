@@ -396,7 +396,7 @@ const Food = () => {
 
     "instant-pot-mac-cheese": {
       title: "Instant Pot Mac and Cheese",
-      image: "/recipes/instant-pot-mac-cheese.jpg",
+      image: "https://pinchofyum.com/tachyon/Instant-Pot-Mac-and-Cheese.jpg?fit=200%2C300&zoom=1",
       description:
         "Creamy, cheesy Instant Pot mac and cheese made with simple ingredients.",
       prepTime: "5 minutes",
