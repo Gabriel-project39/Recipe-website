@@ -64,7 +64,7 @@ const Start = () => {
       title: "Meal Prep Breakfast Sandwiches",
       description:
         "Breakfast Sandwiches – meal prep style! Bake up your eggs on a sheet pan with bacon and spinach, tuck them into English muffins with some cheese, and stash them in the freezer for the week.",
-      image: "/recipes/breakfast-sandwiches.jpg",
+      image: "https://pinchofyum.com/tachyon/Meal-Prep-Breakfast-Sandwich-Ingredients-1-1.jpg?fit=200%2C300&zoom=1",
     },
     {
       id: "cauliflower-fried-rice",

@@ -205,7 +205,7 @@ const Food = () => {
 
     "breakfast-sandwiches": {
       title: "Meal Prep Breakfast Sandwiches",
-      image: "/recipes/breakfast-sandwiches.jpg",
+      image: "https://pinchofyum.com/tachyon/Meal-Prep-Breakfast-Sandwich-Ingredients-1-1.jpg?fit=200%2C300&zoom=1",
       description:
         "Easy freezer-friendly breakfast sandwiches made with eggs, bacon, spinach, English muffins, and cheese.",
       prepTime: "15 minutes",
