@@ -321,7 +321,7 @@ const Food = () => {
 
     "lo-mein": {
       title: "15 Minute Lo Mein",
-      image: "/recipes/lo-mein.jpg",
+      image: "https://pinchofyum.com/tachyon/Lo-Mein-1-2-Featured.jpg?fit=200%2C300&zoom=1",
       description:
         "Quick and delicious lo mein made with noodles, vegetables, soy sauce, sesame oil, and a touch of sweetness.",
       prepTime: "5 minutes",

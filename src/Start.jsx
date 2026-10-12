@@ -99,7 +99,7 @@ const Start = () => {
       title: "15 Minute Lo Mein",
       description:
         "15 Minute Lo Mein! Made with just soy sauce, sesame oil, a pinch of sugar, ramen noodles or spaghetti noodles, and any veggies or protein you like. SO YUMMY!",
-      image: "/recipes/lo-mein.jpg",
+      image: "https://pinchofyum.com/tachyon/Lo-Mein-1-2-Featured.jpg?fit=200%2C300&zoom=1",
     },
     {
       id: "mushroom-fettuccine",
