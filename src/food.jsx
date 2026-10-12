@@ -241,7 +241,7 @@ const Food = () => {
 
     "cauliflower-fried-rice": {
       title: "Cauliflower Fried Rice with Crispy Tofu",
-      image: "/recipes/cauliflower-fried-rice.jpg",
+      image: "https://pinchofyum.com/tachyon/Cauliflower-Fried-Rice-3-1.jpg?fit=200%2C300&zoom=1",
       description:
         "Healthy cauliflower fried rice with crispy tofu, carrots, onions, garlic, eggs, and sesame oil.",
       prepTime: "15 minutes",

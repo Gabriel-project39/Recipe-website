@@ -71,7 +71,7 @@ const Start = () => {
       title: "Cauliflower Fried Rice with Crispy Tofu",
       description:
         "Cauliflower Fried Rice! Healthy + clean fried rice made with cauliflower, carrots, onions, garlic, eggs, sesame oil and the BEST baked crispy tofu.",
-      image: "/recipes/cauliflower-fried-rice.jpg",
+      image: "https://pinchofyum.com/tachyon/Cauliflower-Fried-Rice-3-1.jpg?fit=200%2C300&zoom=1",
     },
   ];
 
