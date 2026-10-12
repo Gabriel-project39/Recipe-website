@@ -50,14 +50,14 @@ const Start = () => {
       title: "19 Cozy Crockpot Recipes",
       description:
         "Hearty soups, saucy pastas, big-flavor chilis, and tender shredded meats that basically make themselves. These cozy crockpot recipes deliver!",
-      image: "/recipes/cozy-crockpot.jpg",
+      image: "https://pinchofyum.com/tachyon/Cozy-Crockpot-Recipes-02-scaled.jpg?fit=300%2C300&zoom=1",
     },
     {
       id: "sesame-noodle-bowls",
       title: "Sesame Noodle Bowls",
       description:
         "Meal Prep Sesame Noodle Bowls! Fork-twirly noodles, an easy creamy sesame sauce, perfect browned chicken, and all the veg. YUM.",
-      image: "/recipes/sesame-noodle-bowls.jpg",
+      image: "https://pinchofyum.com/tachyon/Sesame-Noodle-Meal-Prep.jpg?fit=200%2C300&zoom=1",
     },
     {
       id: "breakfast-sandwiches",

@@ -166,7 +166,7 @@ const Food = () => {
 
     "sesame-noodle-bowls": {
       title: "Sesame Noodle Bowls",
-      image: "/recipes/sesame-noodle-bowls.jpg",
+      image: "https://pinchofyum.com/tachyon/Sesame-Noodle-Meal-Prep.jpg?fit=200%2C300&zoom=1",
       description:
         "Fork-twirly noodles with a creamy sesame sauce, browned chicken, and fresh vegetables.",
       prepTime: "15 minutes",
