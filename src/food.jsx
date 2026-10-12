@@ -358,7 +358,7 @@ const Food = () => {
 
     "mushroom-fettuccine": {
       title: "Date Night Mushroom Fettuccine",
-      image: "/recipes/mushroom-fettuccine.jpg",
+      image: "https://pinchofyum.com/tachyon/Mushroom-Fettuccine-1-2.jpg?fit=200%2C300&zoom=1",
       description:
         "Elegant, creamy mushroom fettuccine that is simple enough for a weeknight but special enough for date night.",
       prepTime: "10 minutes",

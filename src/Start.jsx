@@ -106,7 +106,7 @@ const Start = () => {
       title: "Date Night Mushroom Fettuccine",
       description:
         "Date Night Mushroom Fettuccine – elegant and luscious and FIVE INGREDIENT EASY.",
-      image: "/recipes/mushroom-fettuccine.jpg",
+      image: "https://pinchofyum.com/tachyon/Mushroom-Fettuccine-1-2.jpg?fit=200%2C300&zoom=1",
     },
   ];
 
