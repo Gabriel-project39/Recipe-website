@@ -85,14 +85,14 @@ const Start = () => {
       title: "19 Cozy Crockpot Recipes",
       description:
         "Hearty soups, saucy pastas, big-flavor chilis, and tender shredded meats that basically make themselves. These cozy crockpot recipes deliver!",
-      image: "/recipes/cozy-crockpot.jpg",
+      image: "https://pinchofyum.com/tachyon/Cozy-Crockpot-Recipes-02-scaled.jpg?fit=300%2C300&zoom=1",
     },
     {
       id: "vegetarian-shepherds-pie",
       title: "Vegetarian Shepherd’s Pie",
       description:
         "Vegetarian Shepherd’s Pie ♥ saucy mushrooms, carrots, and peas topped with creamy mashed potatoes. Real food meets comfort food!",
-      image: "/recipes/vegetarian-shepherds-pie.jpg",
+      image: "https://pinchofyum.com/tachyon/vegetarian-shepherds-pie.jpg?fit=200%2C300&zoom=1",
     },
     {
       id: "lo-mein",

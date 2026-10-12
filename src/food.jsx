@@ -280,7 +280,7 @@ const Food = () => {
 
     "vegetarian-shepherds-pie": {
       title: "Vegetarian Shepherd’s Pie",
-      image: "/recipes/vegetarian-shepherds-pie.jpg",
+      image: "https://pinchofyum.com/tachyon/vegetarian-shepherds-pie.jpg?fit=200%2C300&zoom=1",
       description:
         "Saucy mushrooms, carrots, and peas topped with creamy mashed potatoes for the ultimate vegetarian comfort food.",
       prepTime: "25 minutes",
