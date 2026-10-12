@@ -473,7 +473,7 @@ const Food = () => {
 
     "red-curry-lentils": {
       title: "Instant Pot Red Curry Lentils",
-      image: "/recipes/red-curry-lentils.jpg",
+      image: "https://pinchofyum.com/tachyon/Instant-Pot-Red-Curry-Lentils.jpg?fit=200%2C300&zoom=1",
       description:
         "Creamy, spicy and delicious red curry lentils made quickly in the Instant Pot.",
       prepTime: "10 minutes",

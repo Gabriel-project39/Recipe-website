@@ -141,7 +141,7 @@ const Start = () => {
       title: "Instant Pot Red Curry Lentils",
       description:
         "Guess what’s for dinner? Creamy, spicy, delicious red curry lentils, made in the Instant Pot.",
-      image: "/recipes/red-curry-lentils.jpg",
+      image: "https://pinchofyum.com/tachyon/Instant-Pot-Red-Curry-Lentils.jpg?fit=200%2C300&zoom=1",
     },
   ];
 
