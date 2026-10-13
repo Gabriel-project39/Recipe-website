@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 
 const Start = () => {
@@ -462,6 +463,8 @@ const Start = () => {
         icon="♨"
         recipes={instantPotRecipes}
       />
+
+      <Footer />
 
     </div>
   );
