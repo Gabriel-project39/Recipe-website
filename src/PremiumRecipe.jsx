@@ -59,7 +59,7 @@ function PremiumRecipe() {
               </Link>
 
               <a
-                href="#start"
+                href="/start-here"
                 className="font-bold hover:text-[#e0a0c7] transition"
               >
                 START HERE
